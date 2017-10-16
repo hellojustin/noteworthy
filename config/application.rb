@@ -11,6 +11,11 @@ module Noteworthy
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
 
+    # Use UUID primary keys by default
+    config.generators do |g|
+      g.orm :active_record, primary_key_type: :uuid
+    end
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
