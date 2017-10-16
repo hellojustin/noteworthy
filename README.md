@@ -92,7 +92,7 @@ Test suite coming soon.
 
 1.  Configure a git remote to point at the production Heroku environment:
     ``` sh
-    $ heroku git:remote -a noteworthy
+    $ heroku git:remote -a noteworthy-prod
     ```
 
 1.  Push the master branch to the heroku remote:
