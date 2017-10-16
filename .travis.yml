@@ -3,7 +3,8 @@ rvm:
   - 2.3.1
   - 2.2
 env:
-  - DATABASE_URL=postgresql://localhost:5432/noteworthy_test?pool=5
-  - GOOGLE_CLIENT_ID=fake-client-id
-  - GOOGLE_CLIENT_SECRET=fake-client-secret
-  - APPLICATION_BASE_URL=noteworthy.dev
+  global:
+    - DATABASE_URL=postgresql://localhost:5432/noteworthy_test?pool=5
+    - GOOGLE_CLIENT_ID=fake-client-id
+    - GOOGLE_CLIENT_SECRET=fake-client-secret
+    - APPLICATION_BASE_URL=noteworthy.dev
