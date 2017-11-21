@@ -13,3 +13,4 @@ env:
 before_script:
   - psql -c 'create database noteworthy_test;' -U postgres
   - psql -U postgres -c "create extension pgcrypto"
+  - bin/rails db:migrate RAILS_ENV=test
