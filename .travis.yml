@@ -2,6 +2,8 @@ language: ruby
 rvm:
   - 2.3.1
   - 2.2
+addons:
+  postgresql: "9.6"
 services:
   - postresql
 env:
@@ -11,6 +13,6 @@ env:
     - GOOGLE_CLIENT_SECRET=fake-client-secret
     - APPLICATION_BASE_URL=noteworthy.dev
 before_script:
-  - psql -c 'create database noteworthy_test;' -U postgres
-  - psql -U postgres -c "create extension pgcrypto"
+  - psql -U postgres -c 'create database noteworthy_test;'
+  - psql -U postgres -c 'create extension pgcrypto;'
   - bin/rails db:migrate RAILS_ENV=test
