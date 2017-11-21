@@ -6,11 +6,11 @@ services:
   - postresql
 env:
   global:
-    - DATABASE_URL=postgresql://localhost:5432/noteworthy_test?pool=5
+    - DATABASE_URL=postgresql://postgres@localhost:5432/noteworthy_test?pool=5
     - GOOGLE_CLIENT_ID=fake-client-id
     - GOOGLE_CLIENT_SECRET=fake-client-secret
     - APPLICATION_BASE_URL=noteworthy.dev
 before_script:
   - psql -c 'create database noteworthy_test;' -U postgres
-  - psql -U noteworthy_test -c "create extension pgcrypto"
+  - psql -U postgres -c "create extension pgcrypto"
   - bin/rails db:migrate RAILS_ENV=test
